@@ -19,9 +19,9 @@ This project heavily borrowed code from: [dockerfile/nodejs-bower-grunt-runtime]
 
 1. Install [Docker](https://www.docker.com/).
 
-2. Download [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull dockerfile/nodejs-bower-grunt-runtime`
+2. Download [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull digitallyseamless/nodejs-bower-grunt-runtime`
 
-   (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/nodejs-bower-grunt-runtime" github.com/dockerfile/nodejs-bower-grunt-runtime`)
+   (alternatively, you can build an image from Dockerfile: `docker build -t="digitallyseamless/nodejs-bower-grunt-runtime" github.com/DigitallySeamless/nodejs-bower-grunt-runtime`)
 
 
 ### Usage
@@ -42,7 +42,7 @@ When building your application docker image, `ONBUILD` triggers install NPM modu
 * **Step 1**: Create a Dockerfile in your `Node.js` application directory with the following content:
 
 ```dockerfile
-    FROM dockerfile/nodejs-bower-grunt-runtime
+    FROM digitallyseamless/nodejs-bower-grunt-runtime
 ```
 
 * **Step 2**: Build your container image by running the following command in your application directory:
