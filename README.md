@@ -30,6 +30,7 @@ This image assumes that your application:
 
 * has a file named [package.json](https://www.npmjs.org/doc/json.html) listing its dependencies.
 * has a file named [bower.json](http://bower.io/docs/creating-packages/) listing its dependencies.
+* uses a file named [.bowerrc](http://bower.io/docs/config/#bowerrc-specification) to configure bower.
 * has a file named [Gruntfile.js](http://gruntjs.com/sample-gruntfile) registering `build` task.
 * builds to a `dist` folder with a `package.json` file that should be installed with `npm install --production`.
 * has a file named `server.js` as the entrypoint script or define in package.json the attribute: `"scripts": {"start": "node <entrypoint_script_js>"}`
