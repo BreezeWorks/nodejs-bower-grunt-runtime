@@ -11,9 +11,13 @@ FROM dockerfile/nodejs-bower-grunt
 ONBUILD ADD package.json /app/
 ONBUILD RUN npm install
 ONBUILD ADD bower.json /app/
+ONBUILD ADD .bowerrc /app/
 ONBUILD RUN bower install --allow-root
 ONBUILD ADD . /app
 ONBUILD RUN grunt build
+ONBUILD WORKDIR /app/dist
+ONBUILD ENV NODE_ENV production
+ONBUILD RUN npm install
 
 # Define working directory.
 WORKDIR /app
