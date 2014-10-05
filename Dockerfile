@@ -7,6 +7,9 @@
 # Pull base image.
 FROM digitallyseamless/nodejs-bower-grunt
 
+# Install image libs
+ONBUILD RUN apt-get update && apt-get install -y graphicsmagick imagemagick
+
 # Set instructions on build.
 ONBUILD ADD package.json /app/
 ONBUILD RUN npm install
