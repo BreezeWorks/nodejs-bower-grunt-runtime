@@ -10,16 +10,20 @@ It can automatically bundle a `Node.js` application with its dependencies and se
 This project was heavily inspired by code from: [dockerfile/nodejs-bower-grunt-runtime](https://registry.hub.docker.com/u/dockerfile/nodejs-bower-grunt-runtime/).
 
 
-### Requirements
+Requirements
+============
+
 * [Docker](https://www.docker.com/)
 
 
-### Base Docker Image
+Base Docker Image
+=================
 
 * [dockerfile/nodejs-bower-grunt](http://dockerfile.github.io/#/nodejs-bower-grunt)
 
 
-### Installation
+Installation
+============
 **Optional** - docker will download the image if needed when you build your nodejs docker application image.
 
 1. Download [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull digitallyseamless/nodejs-bower-grunt-runtime`
@@ -27,7 +31,8 @@ This project was heavily inspired by code from: [dockerfile/nodejs-bower-grunt-r
    (alternatively, you can build an image from Dockerfile: `docker build -t="digitallyseamless/nodejs-bower-grunt-runtime" github.com/DigitallySeamless/nodejs-bower-grunt-runtime`)
 
 
-### Usage
+Usage
+=====
 
 This image assumes that your application:
 
@@ -62,7 +67,8 @@ When building your application docker image, `ONBUILD` triggers NPM to install y
     echo "Open http://localhost:$PORT/"
 ```
 
-### Branches
+Branches
+========
 
 This repo also includes "feature branches" that add various libraries and other components to the base image. Each feature branch is an automated build as well, and is tagged in the Docker Hub Registry by it's branch name.
 
