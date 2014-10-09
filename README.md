@@ -1,13 +1,17 @@
 ## Node.js w/ Bower & Grunt runtime Dockerfile
 
 
-This repository contains **Dockerfile** of [Node.js](http://nodejs.org/) w/ [Bower](http://bower.io/) & [Grunt](http://gruntjs.com/) runtime for [Docker](https://www.docker.com/)'s [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) published to the public [Docker Hub Registry](https://registry.hub.docker.com/).
+This repository contains a **Dockerfile** that builds a [Node.js](http://nodejs.org/) w/ [Bower](http://bower.io/) & [Grunt](http://gruntjs.com/) runtime. It is also the base for an [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) that is maintained on the public [Docker Hub Registry](https://registry.hub.docker.com/).
 
-This image is a base image for easily running [Node.js](http://nodejs.org/) application.
+This base image is for deploying/running your [Node.js](http://nodejs.org/) applications.
 
 It can automatically bundle a `Node.js` application with its dependencies and set the default command with no additional Dockerfile instructions.
 
-This project heavily borrowed code from: [dockerfile/nodejs-bower-grunt-runtime](https://registry.hub.docker.com/u/dockerfile/nodejs-bower-grunt-runtime/).
+This project was heavily inspired by code from: [dockerfile/nodejs-bower-grunt-runtime](https://registry.hub.docker.com/u/dockerfile/nodejs-bower-grunt-runtime/).
+
+
+### Requirements
+* [Docker](https://www.docker.com/)
 
 
 ### Base Docker Image
@@ -16,10 +20,9 @@ This project heavily borrowed code from: [dockerfile/nodejs-bower-grunt-runtime]
 
 
 ### Installation
+**Optional** - docker will download the image if needed when you build your nodejs docker application image.
 
-1. Install [Docker](https://www.docker.com/).
-
-2. Download [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull digitallyseamless/nodejs-bower-grunt-runtime`
+1. Download [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull digitallyseamless/nodejs-bower-grunt-runtime`
 
    (alternatively, you can build an image from Dockerfile: `docker build -t="digitallyseamless/nodejs-bower-grunt-runtime" github.com/DigitallySeamless/nodejs-bower-grunt-runtime`)
 
@@ -29,15 +32,15 @@ This project heavily borrowed code from: [dockerfile/nodejs-bower-grunt-runtime]
 This image assumes that your application:
 
 * has a file named [package.json](https://www.npmjs.org/doc/json.html) listing its dependencies.
-* has a file named [bower.json](http://bower.io/docs/creating-packages/) listing its dependencies.
-* uses a file named [.bowerrc](http://bower.io/docs/config/#bowerrc-specification) to configure bower.
-* has a file named [Gruntfile.js](http://gruntjs.com/sample-gruntfile) registering `build` task.
+* has a file named [bower.json](http://bower.io/docs/creating-packages/) listing any client dependencies.
+* has a file named [.bowerrc](http://bower.io/docs/config/#bowerrc-specification), used to configure bower.
+* has a file named [Gruntfile.js](http://gruntjs.com/sample-gruntfile) that registers a `build` task.
 * builds to a `dist` folder with a `package.json` file that should be installed with `npm install --production`.
-* has a file named `server.js` as the entrypoint script or define in package.json the attribute: `"scripts": {"start": "node <entrypoint_script_js>"}`
+* has a file named `server.js` as the entrypoint script or defines a `start` script in package.json: `"scripts": {"start": "node <entrypoint_script_js>"}`
 * uses `process.env.NODE_ENV` to determine `production` environment.
 * listens on port `8080`
 
-When building your application docker image, `ONBUILD` triggers install NPM module dependencies of your application using `npm install`.
+When building your application docker image, `ONBUILD` triggers NPM to install your application's dependencies.
 
 * **Step 1**: Create a Dockerfile in your `Node.js` application directory with the following content:
 
@@ -58,3 +61,9 @@ When building your application docker image, `ONBUILD` triggers install NPM modu
     PORT=$(docker port $APP 8080 | awk -F: '{print $2}')
     echo "Open http://localhost:$PORT/"
 ```
+
+### Branches
+
+This repo also includes "feature branches" that add various libraries and other components to the base image. Each feature branch is an automated build as well, and is tagged in the Docker Hub Registry by it's branch name.
+
+* [image-support](https://github.com/DigitallySeamless/nodejs-bower-grunt-runtime/tree/image-support) [`digitallyseamless/nodejs-bower-grunt-runtime:image-support`] - adds `graphicsmagick` and `imagemagick` to the base image
