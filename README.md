@@ -3,30 +3,20 @@
 
 This repository contains a **Dockerfile** that builds a [Node.js](http://nodejs.org/) w/ [Bower](http://bower.io/) & [Grunt](http://gruntjs.com/) runtime. It is also the base for an [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) that is maintained on the public [Docker Hub Registry](https://registry.hub.docker.com/).
 
-This base image is for deploying/running your [Node.js](http://nodejs.org/) applications.
+This is a base image for deploying/running your [Node.js](http://nodejs.org/) applications.
 
 It can automatically bundle a `Node.js` application with its dependencies and set the default command with no additional Dockerfile instructions.
 
 This project was heavily inspired by code from: [dockerfile/nodejs-bower-grunt-runtime](https://registry.hub.docker.com/u/dockerfile/nodejs-bower-grunt-runtime/).
 
-
-Requirements
-============
-
-* [Docker](https://www.docker.com/)
-
-
-Base Docker Image
-=================
-
-* [dockerfile/nodejs-bower-grunt](http://dockerfile.github.io/#/nodejs-bower-grunt)
+### Base Docker Image - [dockerfile/nodejs-bower-grunt](http://dockerfile.github.io/#/nodejs-bower-grunt)
 
 
 Installation
 ============
 **Optional** - docker will download the image if needed when you build your nodejs docker application image.
 
-1. Download [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull digitallyseamless/nodejs-bower-grunt-runtime`
+1. Download an [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) from the public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull digitallyseamless/nodejs-bower-grunt-runtime`
 
    (alternatively, you can build an image from Dockerfile: `docker build -t="digitallyseamless/nodejs-bower-grunt-runtime" github.com/DigitallySeamless/nodejs-bower-grunt-runtime`)
 
