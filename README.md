@@ -1,5 +1,5 @@
-## Node.js w/ Bower & Grunt runtime Dockerfile
-
+Node.js w/ Bower & Grunt runtime Dockerfile
+===========================================
 
 This repository contains a **Dockerfile** that builds a [Node.js](http://nodejs.org/) w/ [Bower](http://bower.io/) & [Grunt](http://gruntjs.com/) runtime. It is also the base for an [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) that is maintained on the public [Docker Hub Registry](https://registry.hub.docker.com/).
 
