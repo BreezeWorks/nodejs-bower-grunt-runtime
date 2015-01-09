@@ -63,3 +63,4 @@ Branches
 This repo also includes "feature branches" that add various libraries and other components to the base image. Each feature branch is an automated build as well, and is tagged in the Docker Hub Registry by it's branch name.
 
 * [image-support](https://github.com/DigitallySeamless/nodejs-bower-grunt-runtime/tree/image-support) [`digitallyseamless/nodejs-bower-grunt-runtime:image-support`] - adds `graphicsmagick` and `imagemagick` to the base image
+* [compass-support](https://github.com/DigitallySeamless/nodejs-bower-grunt-runtime/tree/compass-support) [`digitallyseamless/nodejs-bower-grunt-runtime:compass-support`] - adds `ruby` and `ruby-compass` to the base image
