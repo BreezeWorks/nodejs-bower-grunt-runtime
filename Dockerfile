@@ -7,9 +7,6 @@
 # Pull base image.
 FROM dockerfile/nodejs-bower-grunt
 
-# Temporary fix for npm lock file issue
-ONBUILD RUN npm install -g npm\@2.1.1
-
 # Set instructions on build.
 ONBUILD ADD package.json /app/
 ONBUILD RUN npm install
