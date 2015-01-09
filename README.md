@@ -1,5 +1,5 @@
-Node.js w/ Bower & Grunt runtime Dockerfile
-===========================================
+Node.js w/ Bower & Grunt runtime Dockerfile (with compass support)
+==================================================================
 
 This repository contains a **Dockerfile** that builds a [Node.js](http://nodejs.org/) w/ [Bower](http://bower.io/) & [Grunt](http://gruntjs.com/) runtime. It is also the base for an [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) that is maintained on the public [Docker Hub Registry](https://registry.hub.docker.com/).
 
@@ -16,9 +16,9 @@ Installation
 ============
 **Optional** - docker will download the image if needed when you build your nodejs docker application image.
 
-1. Download an [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) from the public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull digitallyseamless/nodejs-bower-grunt-runtime`
+1. Download an [automated build](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt-runtime/) from the public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull digitallyseamless/nodejs-bower-grunt-runtime:compass-support`
 
-   (alternatively, you can build an image from Dockerfile: `docker build -t="digitallyseamless/nodejs-bower-grunt-runtime" github.com/DigitallySeamless/nodejs-bower-grunt-runtime`)
+   (alternatively, you can build an image from Dockerfile: `docker build -t="digitallyseamless/nodejs-bower-grunt-runtime" github.com/DigitallySeamless/nodejs-bower-grunt-runtime/tree/compass-support`)
 
 
 Usage
@@ -40,7 +40,7 @@ When building your application docker image, `ONBUILD` triggers NPM to install y
 * **Step 1**: Create a Dockerfile in your `Node.js` application directory with the following content:
 
 ```dockerfile
-    FROM digitallyseamless/nodejs-bower-grunt-runtime
+    FROM digitallyseamless/nodejs-bower-grunt-runtime:compass-support
 ```
 
 * **Step 2**: Build your container image by running the following command in your application directory:
