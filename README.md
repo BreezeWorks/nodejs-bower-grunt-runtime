@@ -9,7 +9,7 @@ It can automatically bundle a `Node.js` application with its dependencies and se
 
 This project was heavily inspired by code from: [dockerfile/nodejs-bower-grunt-runtime](https://registry.hub.docker.com/u/dockerfile/nodejs-bower-grunt-runtime/).
 
-### Base Docker Image - [dockerfile/nodejs-bower-grunt](http://dockerfile.github.io/#/nodejs-bower-grunt)
+### Base Docker Image - [digitallyseamless/nodejs-bower-grunt](https://registry.hub.docker.com/u/digitallyseamless/nodejs-bower-grunt/)
 
 
 Installation

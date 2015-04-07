@@ -1,11 +1,11 @@
 #
 # Node.js w/ Bower & Grunt runtime Dockerfile
 #
-# https://github.com/dockerfile/nodejs-bower-grunt-runtime
+# https://github.com/DigitallySeamless/nodejs-bower-grunt-runtime
 #
 
 # Pull base image.
-FROM dockerfile/nodejs-bower-grunt
+FROM digitallyseamless/nodejs-bower-grunt
 
 # Set instructions on build.
 ONBUILD ADD package.json /app/
