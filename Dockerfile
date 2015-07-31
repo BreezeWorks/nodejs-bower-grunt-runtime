@@ -12,7 +12,7 @@ ONBUILD ADD package.json /app/
 ONBUILD RUN npm install
 ONBUILD ADD bower.json /app/
 ONBUILD ADD .bowerrc /app/
-ONBUILD RUN bower install --allow-root
+ONBUILD RUN bower install
 ONBUILD ADD . /app
 ONBUILD RUN grunt build
 ONBUILD WORKDIR /app/dist
