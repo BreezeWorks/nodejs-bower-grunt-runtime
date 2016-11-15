@@ -19,7 +19,7 @@ ONBUILD ADD bower.json /app/
 ONBUILD ADD .bowerrc /app/
 ONBUILD RUN bower install
 ONBUILD ADD . /app
-ONBUILD RUN grunt build
+ONBUILD RUN grunt build --force
 ONBUILD WORKDIR /app/dist
 ONBUILD ENV NODE_ENV production
 ONBUILD RUN npm install
