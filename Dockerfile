@@ -7,12 +7,17 @@
 # Pull base image.
 FROM digitallyseamless/nodejs-bower-grunt
 
+ARG port=8080
+
 # Install image libs
 ONBUILD RUN apt-get update && apt-get install -y ruby ruby-dev graphicsmagick imagemagick && \
             apt-get clean && \
             rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ONBUILD RUN gem install compass
+
+
+ONBUILD ENV PORT=$port
 
 # Set instructions on build.
 ONBUILD ADD package.json /app/
@@ -33,4 +38,4 @@ WORKDIR /app
 CMD ["npm", "start"]
 
 # Expose ports.
-EXPOSE 8080
+EXPOSE $port 
