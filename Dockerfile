@@ -14,7 +14,7 @@ ONBUILD RUN apt-get update && apt-get install -y ruby ruby-dev graphicsmagick im
 
 ONBUILD RUN gem install compass
 
-ONBUILD ENV PORT=8080
+ONBUILD ENV PORT 8080
 
 # Set instructions on build.
 ONBUILD ADD package.json /app/
