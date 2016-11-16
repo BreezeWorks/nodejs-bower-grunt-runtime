@@ -25,7 +25,7 @@ ONBUILD RUN bower install
 ONBUILD ADD . /app
 ONBUILD RUN grunt build --force
 ONBUILD WORKDIR /app/dist
-ONBUILD ENV NODE_ENV production
+ONBUILD ENV NODE_ENV development
 ONBUILD RUN npm install
 
 # Define working directory.
