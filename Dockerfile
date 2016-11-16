@@ -8,7 +8,7 @@
 FROM digitallyseamless/nodejs-bower-grunt
 
 # Install image libs
-ONBUILD RUN apt-get update && apt-get install -y ruby graphicsmagick imagemagick && \
+ONBUILD RUN apt-get update && apt-get install -y ruby ruby-dev graphicsmagick imagemagick && \
             apt-get clean && \
             rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
