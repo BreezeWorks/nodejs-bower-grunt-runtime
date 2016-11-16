@@ -12,7 +12,8 @@ ONBUILD RUN apt-get update && apt-get install -y ruby ruby-dev graphicsmagick im
             apt-get clean && \
             rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ONBUILD RUN gem install compass
+ONBUILD RUN gem install --no-rdoc --no-ri sass -v 3.4.22
+ONBUILD RUN gem install --no-rdoc --no-ri compass
 
 ONBUILD ENV PORT 8080
 
